@@ -1,0 +1,28 @@
+dist: xenial
+os: linux
+
+language: ruby
+rvm: 2.6
+
+cache: bundler
+
+addons:
+  apt:
+    packages:
+      - ncftp
+
+env:
+  global:
+    - JEKYLL_ENV=production
+
+deploy:
+  skip_cleanup: true
+
+  provider: script
+  script: bash script/cideploy
+  on:
+    branch: master
+
+script: script/cibuild
+install: script/bootstrap
+before_install: gem update --system

@@ -1,0 +1,4 @@
+# example configuration
+
+encoding: UTF-8
+exclude: ['Gemfile', 'Gemfile.lock', 'README.md', 'LICENSE', 'script']
